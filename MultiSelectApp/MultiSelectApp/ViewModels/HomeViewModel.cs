@@ -9,8 +9,7 @@ using Xamarin.Forms;
 namespace MultiSelectApp.ViewModels
 {
     public class HomeViewModel : INotifyPropertyChanged
-    {
-        
+    {        
         public HomeViewModel()
         {
             PopulateList();
@@ -30,7 +29,8 @@ namespace MultiSelectApp.ViewModels
                 OnPropertyChanged();
             }
         }
-            
+        
+        //Field and property to show a message to the user.    
         private string _message;
         public string Message
         {
