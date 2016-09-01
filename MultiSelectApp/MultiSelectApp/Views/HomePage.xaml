@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MultiSelectApp.Views.HomePage">
+    <StackLayout Spacing="5">
+        <Button Text="Show Selected Items"
+                Command="{Binding btnClick_Command}"/>
+        <Label FontSize="Large" Text="{Binding Message}" TextColor="Red"/>
+        <ListView
+            ItemsSource="{Binding ItemList}"
+            HasUnevenRows="True"
+            VerticalOptions="FillAndExpand"
+            BackgroundColor="#262626"
+            SeparatorColor="#4ca6ff">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout
+                                Padding="5"
+                                Spacing="5"
+                                VerticalOptions="FillAndExpand"
+                                Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Name}" HorizontalOptions="Start" />
+                                <Switch HorizontalOptions="EndAndExpand" IsToggled="{Binding IsSelected}"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
